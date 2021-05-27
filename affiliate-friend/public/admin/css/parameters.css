@@ -1,0 +1,50 @@
+.delete-selected-parameter{
+    outline: none;
+}
+
+.modal-header .close{
+    margin-top:-20px;
+}
+
+.add-parameter{
+    margin-bottom: 0;
+}
+
+.submit-row{
+    margin: 50px 0 0 0;
+}
+
+.delete-parameter{
+    padding-left: 0;
+}
+
+.submit-parameter{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0;
+}
+
+.submit-parameter input{
+    margin-right: 10px;
+}
+
+.submit-parameter input:last-child{
+    margin-right: 0;
+}
+
+@media screen and (max-width: 576px) {
+    .submit-parameter input:last-child{
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .submit-row{
+       margin-top: 20px;
+    }
+
+    .submit-parameter{
+        display: unset;
+        padding-left: 0;
+    }
+}

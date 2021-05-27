@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+/*************** Customize ***************/
+.my-action .log-text {
+    width: calc(100% - 140px);
+    height: 20px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    text-overflow: ellipsis;
+}
+
+#tbl-users {
+    min-width: 100% !important;
+    overflow-x: auto;
+}
