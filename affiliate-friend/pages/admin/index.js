@@ -23,15 +23,16 @@ export default function login() {
             <link rel="stylesheet" href="/admin/css/dataTables/dataTables.responsive.css"/>
             <link rel="stylesheet" href="/admin/css/parameters.css"/>
         </Head>
-        <body className="dashboard">
+        <main>
             <div id="wrapper">
                 <Header />
             </div>
-            <script type="text/javascript" src="/admin/js/jquery.min.js"></script>
-            <script type="text/javascript" src="/admin/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="/admin/js/metisMenu.min.js"></script>
-            <script type="text/javascript" src="/admin/js/startmin.js"></script>
-        </body>
+        </main>
+        <script type="text/javascript" src="/admin/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/admin/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/admin/js/metisMenu.min.js"></script>
+        <script type="text/javascript" src="/admin/js/startmin.js"></script>
         </>
+
     )
 }
