@@ -1,7 +1,11 @@
 import Head from "next/head";
 import Header from "../../src/components/header";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import "../../src/components/fontawesome";
+import "../../styles/dashboard.module.css"
+import Content from "../../src/components/content";
 
-export default function login() {
+function Admin() {
     return (
         <>
         <Head>
@@ -13,7 +17,6 @@ export default function login() {
             <link href="/admin/css/timeline.css" rel="stylesheet"/>
             <link href="/admin/css/startmin.css" rel="stylesheet"/>
             <link href="/admin/css/morris.css" rel="stylesheet"/>
-            <link href="admin/css/font-awesome.min.css" rel="stylesheet"/>
             <link href="/admin/css/custom-admin-style.css" rel="stylesheet"/>
 
             <link rel="stylesheet" href="/admin/css/dashboard.css"/>
@@ -23,11 +26,17 @@ export default function login() {
             <link rel="stylesheet" href="/admin/css/dataTables/dataTables.responsive.css"/>
             <link rel="stylesheet" href="/admin/css/parameters.css"/>
         </Head>
-        <main>
-            <div id="wrapper">
+
+            <div id="wrapper" style={{minHeight: "930px"}}>
                 <Header />
+                <div className="page-wrapper" style={{minHeight: "595"}}>
+                    <div className="container-fluid">
+                        <Content />
+                    </div>
+                </div>
             </div>
-        </main>
+
+
         <script type="text/javascript" src="/admin/js/jquery.min.js"></script>
         <script type="text/javascript" src="/admin/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/admin/js/metisMenu.min.js"></script>
@@ -36,3 +45,5 @@ export default function login() {
 
     )
 }
+
+export default Admin;

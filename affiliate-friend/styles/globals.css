@@ -7,10 +7,17 @@ body {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.inside-panel {
+  font-size: 0.75em;
+}
+
+.sidebar .arrow {
+    float: right;
 }
