@@ -1,0 +1,70 @@
+{
+  "menu": [
+    {
+      "classes": "active",
+      "text": "TOP",
+      "link": "/admin",
+      "children": null
+    },
+    {
+      "classes": "app-auth module",
+      "text": "会員一覧 1",
+      "link": "#",
+      "children": [
+        {
+          "classes": "model-m",
+          "text": "会員管理 2",
+          "link": "/admin/auth/member/",
+          "children": null
+        },
+        {
+          "text": "フレンズ経由登録 2",
+          "link": "/admin/auth/member/",
+          "children": null
+        },
+        {
+          "text": "会員一覧 2",
+          "link": "#",
+          "children": [
+            {
+              "text": "会員管理 3",
+              "link": "/admin/auth/member/",
+              "children": null
+            },
+            {
+              "text": "フレンズ経由登録 3",
+              "link": "/admin/auth/member/",
+              "children": null
+            },
+            {
+              "text": "フレンズ経由登録 削除 3",
+              "link": "/admin/auth/member/",
+              "children": null
+            }
+          ]
+        }
+      ]
+    },
+    { "classes": "app-django module",
+      "text": "会員一覧 11",
+      "link": "#",
+      "children": [
+        {
+          "text": "会員管理 2",
+          "link": "/admin/auth/member/",
+          "children": null
+        },
+        {
+          "text": "フレンズ経由登録 2",
+          "link": "/admin/auth/member/",
+          "children": null
+        },
+        {
+          "text": "フレンズ経由登録 削除 2",
+          "link": "/admin/auth/member/",
+          "children": null
+        }
+      ]
+    }
+  ]
+}

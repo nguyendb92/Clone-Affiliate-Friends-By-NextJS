@@ -29,7 +29,7 @@ function Admin() {
 
             <div id="wrapper" style={{minHeight: "930px"}}>
                 <Header />
-                <div className="page-wrapper" style={{minHeight: "595"}}>
+                <div id="page-wrapper" style={{minHeight: "595"}}>
                     <div className="container-fluid">
                         <Content />
                     </div>

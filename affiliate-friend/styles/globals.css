@@ -21,3 +21,6 @@ a {
 .sidebar .arrow {
     float: right;
 }
+#side-menu > ul li {
+  list-style-type: none;
+}
