@@ -1,0 +1,63 @@
+.pagination li.active a {
+    color: #ff9900;
+}
+
+.csv_download {
+    display: flex;
+    flex-direction: column;
+    float: right;
+}
+
+#export-current-CSV {
+    background-color: rgba(102,102,102,1);
+    color: white;
+}
+
+#export-current-CSV:hover {
+    color: #333;
+    background-color: #a5a1a1;
+    border-color: #adadad;
+}
+
+.dataTables_scrollHeadInner {
+    min-width: 100% !important
+}
+
+.dataTables_scrollBody table tr td {
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.dataTables_scrollBody>table,
+div.dataTables_scrollBody>table {
+    min-width: 100% !important
+}
+
+.MuiTableBody-root tr.odd {
+    background-color: #e1e0e0 !important;
+}
+
+td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignLeft {
+    background-color: #e1e0e0;
+}
+
+.MuiTable-root, .MuiTable-root>tbody>tr>td, .MuiTable-root>tbody>tr>th,
+.MuiTable-root>tfoot>tr>td, .MuiTable-root>tfoot>tr>th,
+.MuiTable-root>thead>tr>td, .MuiTable-root>thead>tr>th {
+    border: 1px solid #000000;
+}
+
+.report_table_head {
+    background-color: rgba(102,102,102,1);
+}
+
+.report_table_head tr th {
+    color: white;
+    text-align: center;
+}
+
+.report_table.dataTable thead .sorting:after {
+    opacity: 0.5 !important;
+    color: white !important;
+}
