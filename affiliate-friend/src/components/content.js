@@ -2,30 +2,23 @@ import Panel from "./panel";
 import DataTable from "./data-table";
 
 
-export const getStaticProps = async () => {
-    const res = await fetch(`http://localhost:8003/api/items/`, {
-        method: "get",
-        headers: {
-            "X-CSRFToken": getCookie("csrftoken"),
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        },
-    })
-    console.log("Rest", res)
-    const data = await res.json();
-    console.log(data)
-    if (!data) {
-        return {
-            notFound: true,
-        }
-    }
 
-    return {
-        props: {datatable: data}, // will be passed to the page component as props
-    }
-}
 
-function Content({datatable}) {
+function Content(props) {
+    console.log("PROPS", props)
+
+    //     let result = fetch('http://localhost:8003/api/items/')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         // console.log(data);
+    //         return data
+    //         }
+    //     )
+    //     .catch(error => {
+    //       console.error('Error:', error);
+    //     })
+    //
+    // console.log("result", result)
     return (
         <>
             <div className="row">
@@ -34,9 +27,9 @@ function Content({datatable}) {
                 </div>
             </div>
             <Panel/>
-            <DataTable data={datatable}/>
+            <DataTable data={props.dataTable} columns={props.columns}/>
         </>
-    )
+    );
 }
 
 

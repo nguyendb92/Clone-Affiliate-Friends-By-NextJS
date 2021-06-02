@@ -59,6 +59,7 @@ const useStyles = makeStyles({
 const array = require("../../public/admin/static/data.json");
 let label = ["ASP名", "案件ID", "案件名"]
 
+
 function DataTable(props) {
     const data = [
         {name: "John", email: "john@gmail.com", age: 12, gender: "Male"},
@@ -68,24 +69,8 @@ function DataTable(props) {
         {name: "Aseka", email: "aseka@gmail.com", age: 19, gender: "Female"},
         {name: "Meuko", email: "meuko@gmail.com", age: 12, gender: "Female"},
     ];
-    const columns = [
-        {
-            title: "NO",
-            field: 0,
-        },
-        {
-            title: "ASP名",
-            field: 1,
-        },
-        {
-            title: "案件ID",
-            field: 2,
-        },
-        {
-            title: "案件名",
-            field: 4,
-        },
-    ];
+    console.log("DataTable", props.data.length, props.data[0])
+
     const classes = useStyles();
     return (
         <>
@@ -93,7 +78,7 @@ function DataTable(props) {
                 <MaterialTable
                     title="表示期間 ダウンロード"
                     data={props.data}
-                    columns={columns}
+                    columns={props.columns}
                     options={{
                         paging: false,
                         search: false,
