@@ -16,7 +16,8 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-import './data-table.module.css'
+import '../../styles/data-table.module.css'
+import {useEffect} from "react";
 
 const tableIcons = {
     Add: forwardRef((props, ref) => <AddBox {...props} ref={ref}/>),
@@ -69,14 +70,17 @@ function DataTable(props) {
         {name: "Aseka", email: "aseka@gmail.com", age: 19, gender: "Female"},
         {name: "Meuko", email: "meuko@gmail.com", age: 12, gender: "Female"},
     ];
-    console.log("DataTable", props.data.length, props.data[0])
+    useEffect(()=> {
+
+        console.log("----------DataTable--------------------------", props)
+    })
 
     const classes = useStyles();
     return (
         <>
             <div>
                 <MaterialTable
-                    title="表示期間 ダウンロード"
+                    title=""
                     data={props.data}
                     columns={props.columns}
                     options={{
