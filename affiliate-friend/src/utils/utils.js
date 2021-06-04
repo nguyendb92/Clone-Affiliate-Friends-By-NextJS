@@ -1,5 +1,93 @@
 class Utils {
 
+    static shortcutToChangeDate(date_type) {
+        // 3m: 3 month ago
+        // 6m: 6 month ago
+        // 12m: 12 month ago
+        // all: all month from 07/2019
+        let _today = new Date();
+        let _oneMonthAgo = new Date();
+        let _twoMonthAgo = new Date();
+        let _threeMonthAgo = new Date();
+        let _sixMonthAgo = new Date();
+        let _twelveMonthAgo = new Date();
+        let _minStartDate = new Date(Date.parse("2019-07-01"))
+        let _endDate;
+
+        _oneMonthAgo.setMonth(_today.getMonth() - 1)
+        _twoMonthAgo.setMonth(_today.getMonth() - 2)
+        _endDate = _today.getDate() >= 18 ? _oneMonthAgo : _twoMonthAgo
+
+        _threeMonthAgo.setMonth(_endDate.getMonth() - 2)
+        _sixMonthAgo.setMonth(_endDate.getMonth() - 5)
+        _twelveMonthAgo.setMonth(_endDate.getMonth() - 11)
+
+        switch (date_type) {
+            case '3m':
+                updateSelectionDate(_threeMonthAgo, _endDate);
+                break;
+            case '6m':
+                updateSelectionDate(_sixMonthAgo, _endDate);
+                break;
+            case '12m':
+                updateSelectionDate(_twelveMonthAgo, _endDate);
+                break;
+            default:
+                updateSelectionDate(_minStartDate, _endDate);
+                break
+        }
+    }
+
+    static monthRange(startDate, endDate) {
+        let start = startDate.split('-');
+        let end = endDate.split('-');
+        let startYear = parseInt(start[0]);
+        let endYear = parseInt(end[0]);
+        let dates = [];
+
+        for (let i = startYear; i <= endYear; i++) {
+            let endMonth = i != endYear ? 11 : parseInt(end[1]) - 1;
+            let startMon = i === startYear ? parseInt(start[1]) - 1 : 0;
+            for (let j = startMon; j <= endMonth; j = j > 12 ? j % 12 || 11 : j + 1) {
+                let month = j + 1;
+                let displayMonth = month < 10 ? '0' + month : month;
+                dates.push([i, displayMonth].join('-'));
+            }
+        }
+        return dates;
+    }
+
+    /**
+     * Returns a date set to the begining of the month
+     *
+     * @param {Date} myDate
+     * @returns {Date}
+     */
+    static beginningOfMonth(myDate) {
+        let date = new Date(myDate);
+        date.setDate(1)
+        date.setHours(0);
+        date.setMinutes(0);
+        date.setSeconds(0);
+        return date;
+    }
+
+    /**
+     * Returns a date set to the end of the month
+     *
+     * @param {Date} myDate
+     * @returns {Date}
+     */
+    static endOfMonth(myDate) {
+        let date = new Date(myDate);
+        date.setMonth(date.getMonth() + 1)
+        date.setDate(0);
+        date.setHours(23);
+        date.setMinutes(59);
+        date.setSeconds(59);
+        return date;
+    }
+
     static normalizeDate(dateStr) {
         if (dateStr) {
             dateStr = dateStr.replace(/-/g, "/");
