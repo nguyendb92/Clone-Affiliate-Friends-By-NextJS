@@ -3,10 +3,11 @@ import axios from "axios";
 class ApiWorker {
 
 
-    static async get(url) {
+    static async get(url, params) {
         console.log("FETCH ....")
         try {
-            let response = await axios.get(url)
+            params = (params !== undefined) ? params : {};
+            let response = await axios.get(url, params)
             console.log("Response", response)
             return response;
         } catch (e) {
@@ -23,7 +24,7 @@ class ApiWorker {
         try {
             let response = await axios.post(url, params)
             return response;
-        } catch (e){
+        } catch (e) {
             console.log(`😱 Axios request failed: ${e}`);
         }
     };
