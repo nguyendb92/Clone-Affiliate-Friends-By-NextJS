@@ -2,7 +2,6 @@ import React from 'react';
 import {useEffect, useState} from "react";
 import {
     LIMIT_DATE_SEARCH,
-    URL_ITEM_REWARD_100,
     URL_ITEM_REWARD_API
 } from "../../constants/admin";
 import ApiWorker from "../services/api";
@@ -29,23 +28,19 @@ function ReportLayout(props) {
     const [endMonth, setEndMonth] = useState(`${initEndMonth.getMonth() + 1}月`);
     const [referenceDateType, setReferenceDateType] = useState(0);
     const [dataTable, setDataTable] = useState([]);
-    let [startDate, setStartDate] = React.useState(`${startYear}-${startMonth.replace('月', '')}`)
-    let [endDate, setEndDate] = React.useState(`${endYear}-${endMonth.replace('月', '')}`)
 
 
     useEffect(async () => {
-        // const response = await ApiWorker.get(URL_ITEM_REWARD_100)
         const response = await ApiWorker.get(URL_ITEM_REWARD_API,
             {
                 "params": {
-                    "start_date": startDate,
-                    "end_date": endDate,
+                    "start_date": `${startYear}-${startMonth.replace('月', '')}`,
+                    "end_date": `${endYear}-${endMonth.replace('月', '')}`,
                     "reference_date_type": referenceDateType,
                 }
             }
         );
-        console.log(response.data);
-        console.log("ERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR")
+
         let dataSource = Object.values(response.data)
         setDataTable(dataSource);
         console.log("DATASOURCE", dataSource)
@@ -128,16 +123,20 @@ function ReportLayout(props) {
 
     }
 
+    useEffect(() => {
+        console.log("STATE startYear", startYear)
+        console.log("STATE startMonth", startMonth)
+        console.log("STATE endMonth", endMonth)
+
+    })
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (handleValidation(e)) {
             console.log("Form valid !")
-            setStartDate(`${startYear}-${startMonth.replace('月', '')}`)
-            setEndDate(`${endYear}-${endMonth.replace('月', '')}`)
             let response = await ApiWorker.get(URL_ITEM_REWARD_API, {
                     "params": {
-                        "start_date": startDate,
-                        "end_date": endDate,
+                        "start_date": `${startYear}-${startMonth.replace('月', '')}`,
+                        "end_date": `${endYear}-${endMonth.replace('月', '')}`,
                         "reference_date_type": referenceDateType,
                     }
                 }
@@ -156,25 +155,74 @@ function ReportLayout(props) {
     const columns = [
         {
             title: 'NO',
-            dataIndex: 'name',
+            dataIndex: 'index',
             key: 'index',
+            width: 50,
         },
+
         {
-            title: 'asp_item_id',
-            dataIndex: 'name',
-            key: 'asp_item_id',
-        },
-        {
-            title: 'asp_item_name',
-            dataIndex: 'age',
-            key: 'asp_item_name',
-        },
-        {
-            title: 'asp_name',
-            dataIndex: 'address',
+            title: 'ASP名',
+            dataIndex: 'asp_name',
             key: 'asp_name',
+            width: 100,
         },
+        {
+            title: '案件ID',
+            dataIndex: 'asp_item_id',
+            key: 'asp_item_id',
+            width: 100,
+        },
+        {
+            title: '案件名',
+            dataIndex: 'asp_item_name',
+            key: 'asp_item_name',
+            width: 250,
+        },
+
     ];
+
+    const createColumnMonths = (datatable) => {
+        let col = Array.from(columns)
+        let months = datatable[0]["months"]
+        Object.keys(months).forEach((key) => {
+            col.push(
+                {
+                    title: key,
+                    children: [
+                        {
+                            title: "成果件数",
+                            dataIndex: `count_${key}`,
+                            key: `price`,
+                            width: 100,
+                        },
+                        {
+                            title: '成果報酬',
+                            dataIndex: `price_${key}`,
+                            key: 'price',
+                            width: 100,
+                        },
+                    ],
+
+                })
+        })
+
+        return col
+    }
+    const reformatJsonToTable = (datatable) => {
+        let clone_table = Array.from(datatable)
+        let result = clone_table.map((item) => {
+            let new_item = {...item};
+            for (let key in new_item["months"]) {
+                let count_key = `count_${key}`
+                let price_key = `price_${key}`
+                new_item[count_key] = new_item["months"][key]['count'];
+                new_item[price_key] = new_item["months"][key]['price'];
+            }
+            return new_item
+        })
+        console.log("RESULT", result)
+        return result
+    }
 
     return (
         <>
@@ -199,8 +247,9 @@ function ReportLayout(props) {
                 <div>
                     <DownloadForm/>
                 </div>
-                <div>
-                    <DataTable data={dataTable} columns={columns}/>
+                <div>{dataTable.length > 0 &&
+                <DataTable data={reformatJsonToTable(dataTable)} columns={createColumnMonths(dataTable)}/>
+                }
                 </div>
             </div>
         </>

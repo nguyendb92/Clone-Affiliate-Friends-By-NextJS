@@ -14,7 +14,7 @@ function DataTable(props) {
     return (
         <>
             <div>
-                <Table dataSource={dataSource} columns={props.columns} />
+                <Table dataSource={dataSource} columns={props.columns} scroll={{ x: 1300 }} bordered={true}/>
             </div>
         </>
     )
