@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import "../../styles/card.module.css"
 
 function Card(props) {
     return (

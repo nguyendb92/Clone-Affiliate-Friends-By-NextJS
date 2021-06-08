@@ -7,9 +7,7 @@ import '../../styles/data-table.module.css'
 function DataTable(props) {
     const dataSource = props.data
     useEffect(() => {
-        console.log("----------DataTable--------------------------", props)
     })
-
 
     return (
         <>

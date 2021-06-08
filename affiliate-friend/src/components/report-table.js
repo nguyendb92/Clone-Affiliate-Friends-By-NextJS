@@ -14,7 +14,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import 'antd/dist/antd.css';
 
 
-function ReportLayout(props) {
+function ReportTable(props) {
     const today = new Date();
     let initEndMonth = new Date();
     let initStartMonth = new Date();
@@ -256,4 +256,4 @@ function ReportLayout(props) {
     )
 }
 
-export default ReportLayout;
+export default ReportTable;

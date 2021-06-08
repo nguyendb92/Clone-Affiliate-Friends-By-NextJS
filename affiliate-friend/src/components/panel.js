@@ -1,4 +1,5 @@
 import Card from "./card"
+import "./fontawesome";
 
 function Panel() {
     return (
