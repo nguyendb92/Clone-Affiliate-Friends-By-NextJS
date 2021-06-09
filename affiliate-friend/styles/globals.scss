@@ -1,0 +1,34 @@
+//@import "~bootstrap/scss/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css");
+
+html {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+a {
+	text-decoration: none;
+}
+* {
+	box-sizing: border-box;
+}
+.inside-panel {
+	font-size: 0.75em;
+}
+.sidebar {
+	.arrow {
+		float: right;
+	}
+}
+#side-menu {
+	ul {
+		li {
+			list-style-type: none;
+		}
+	}
+}

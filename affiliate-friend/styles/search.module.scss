@@ -1,0 +1,114 @@
+/* .formSearch .row.no-gutters > [class*="col-"]{
+    padding-left:0 ;
+    padding-right:0 ;
+} */
+.formSearch {
+	.row {
+		display: flex;
+		align-items: stretch;
+		flex-wrap: wrap;
+	}
+	.btn-custom {
+		padding: 11px;
+		width: 116px !important;
+	}
+	.btn-action {
+		padding: 15px 20px;
+		font-weight: bold;
+	}
+}
+.label-search {
+	border: 1px solid #ddd;
+	margin: -1px 0 0 0;
+	padding: 20px;
+	background: #EEE;
+	padding-top: 27px;
+}
+.input-search {
+	border: 1px solid #ddd;
+	margin: -1px 0 0 0;
+	padding: 20px;
+	ul {
+		margin-bottom: 0;
+		padding-left: 0;
+		padding: 6px 0;
+	}
+}
+.input-search.check-list {
+	ul {
+		li {
+			list-style: none;
+			display: inline;
+			margin-right: 15px;
+			&:last-child {
+				margin-right: 0;
+			}
+			label {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+.input-search.custom-daterange {
+	display: flex;
+	line-height: 34px;
+}
+.btn-secondary {
+	background: gray;
+	color: white;
+	font-weight: bold;
+}
+.date-standard {
+	line-height: 37px;
+	padding-left: 15px;
+}
+#id_reward_amount_min {
+	width: 20%;
+	display: inline-block;
+	margin-right: 5px;
+}
+#id_reward_amount_max {
+	width: 20%;
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: 10px;
+}
+#id_count_of_record_min {
+	width: 20%;
+	display: inline-block;
+	margin-right: 5px;
+}
+#id_count_of_record_max {
+	width: 20%;
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: 10px;
+}
+#id_start_date {
+	width: 30%;
+	display: inline-block;
+}
+#id_end_date {
+	width: 30%;
+	display: inline-block;
+}
+.sortBtnArea {
+	margin-top: 10px;
+	display: inline-flex;
+	label {
+		display: inline-block;
+		margin: 5px;
+		width: auto;
+		height: auto;
+		padding: 7px 15px;
+		margin: 0 10px 0 0;
+		color: #fff;
+		text-align: center;
+		cursor: pointer;
+		background: #004290;
+		border-radius: 5px;
+	}
+	input[type=radio] {
+		display: none;
+	}
+}

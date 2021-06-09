@@ -1,5 +1,5 @@
 import React from "react";
-import '../../styles/search.module.css'
+import '../../styles/search.module.scss'
 import "react-datepicker/dist/react-datepicker.css";
 import {Radio} from 'antd';
 import 'antd/dist/antd.css';

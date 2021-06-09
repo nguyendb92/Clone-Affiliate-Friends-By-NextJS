@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../components/header";
 import "../components/fontawesome";
-import "../../styles/dashboard.module.css"
+import "../../styles/dashboard.module.scss"
 import NavHeader from "../components/nav-header";
 import React from "react";
 import SideBar from "../components/left-menu";

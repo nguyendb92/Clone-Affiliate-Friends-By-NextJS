@@ -8,8 +8,8 @@ import ApiWorker from "../services/api";
 import SearchForm from "./search-form";
 import DownloadForm from "./download-form"
 import DataTable from "./data-table";
-import "../../styles/report-layout.module.css";
-import '../../styles/search.module.css'
+import "../../styles/report-layout.module.scss";
+import '../../styles/search.module.scss'
 import "react-datepicker/dist/react-datepicker.css";
 import 'antd/dist/antd.css';
 

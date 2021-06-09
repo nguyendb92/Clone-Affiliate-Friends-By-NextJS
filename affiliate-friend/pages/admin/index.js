@@ -1,6 +1,6 @@
 import Head from "next/head";
 import "../../src/components/fontawesome";
-import "../../styles/dashboard.module.css"
+import "../../styles/dashboard.module.scss"
 import Content from "../../src/components/content";
 import AdminLayout from "../../src/layout/admin-layout";
 

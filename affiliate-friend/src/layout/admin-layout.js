@@ -13,6 +13,7 @@ function AdminLayout(props) {
                 <link href="/admin/css/timeline.css" rel="stylesheet"/>
                 <link href="/admin/css/startmin.css" rel="stylesheet"/>
                 <link href="/admin/css/morris.css" rel="stylesheet"/>
+                <link href="/admin/css/font-awesome.min.css" rel="stylesheet"/>
                 <link href="/admin/css/custom-admin-style.css" rel="stylesheet"/>
                 <link rel="stylesheet" href="/admin/css/dashboard.css"/>
                 <link rel="stylesheet" href="/admin/css/admin.irregular.css"/>
