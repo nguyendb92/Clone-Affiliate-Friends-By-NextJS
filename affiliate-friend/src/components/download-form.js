@@ -1,4 +1,4 @@
-import '../../styles/download.module.scss'
+import '../../styles/download.module.css'
 
 function DownloadForm(){
     return (

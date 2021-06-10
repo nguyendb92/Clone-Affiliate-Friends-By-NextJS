@@ -1,3 +1,4 @@
+import React from "react";
 import Panel from "./panel";
 import DataTable from "./data-table";
 
@@ -5,12 +6,8 @@ import DataTable from "./data-table";
 function Content(props) {
     return (
         <>
-            <div className="row">
-                <div className="col-sm-12">
-
-                </div>
-            </div>
             <Panel/>
+            {props.children}
             <DataTable data={props.dataTable} columns={props.columns}/>
         </>
     );

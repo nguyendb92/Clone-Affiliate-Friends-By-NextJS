@@ -1,27 +1,28 @@
 import Link from 'next/link'
-// import "../../styles/card.module.scss"
+import style from  "../../styles/card.module.css"
+
 
 function Card(props) {
     return (
         <>
             <div className="col-lg-3 col-md-6">
-                <div className={props.classNames.panel}>
-                    <div className="card-header">
+                <div className={`${props.classNames.panel}`}>
+                    <div className={`card-header ${style.cardHeader}`}>
                         <div className="row">
                             <div className="col-xs-3">
-                                <i className={props.classNames.headerIcon}></i>
+                                {props.icon}
                             </div>
-                            <div className="col-xs-9 text-right">
-                                <div className="huge">{props.number}</div>
+                            <div className="col-xs-9 text-lg-end">
+                                <div className={style.huge}>{props.number}</div>
                                 <div>{props.name}</div>
                             </div>
                         </div>
                     </div>
                     <Link  href={props.href}>
                         <a>
-                            <div className="card-footer">
-                                <span className="pull-left">{props.descLink}</span>
-                                <span className="pull-right"><i className={props.classNames.footerIcon}></i></span>
+                            <div className={`card-footer card_cardFooter__m89g2`}>
+                                <span className="float-start">{props.descLink}</span>
+                                <span className="float-end">{props.footerIcon}</span>
 
                                 <div className="clearfix"></div>
                             </div>

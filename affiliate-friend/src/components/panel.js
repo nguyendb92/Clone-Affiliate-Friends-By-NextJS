@@ -1,5 +1,6 @@
 import Card from "./card"
-import "./fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 function Panel() {
     return (
@@ -13,33 +14,37 @@ function Panel() {
                 <Card name="ASP管理" descLink="詳細を見る" number="11" classNames={
                     {
                         panel: "card bg-primary",
-                        headerIcon: "fa fa-user-secret fa-5x",
-                        footerIcon: "fa fa-arrow-circle-right",
                     }
-                } href="/admin/user_details/serviceprovider"/>
+                } href="/admin/user_details/serviceprovider"
+                      icon={<FontAwesomeIcon icon="user-secret" size="5x"/>}
+                      footerIcon={<FontAwesomeIcon icon="arrow-circle-right"/>}
+                />
                 <Card name="運営者" descLink="詳細を見る" number="38" classNames={
                     {
                         panel: "card bg-success",
-                        headerIcon: "fa fa-user fa-5x",
-                        footerIcon: "fa fa-arrow-circle-right",
                     }
-                } href="/admin/auth/managers/"/>
+                } href="/admin/auth/managers/"
+                      icon={<FontAwesomeIcon icon="user" size="5x"/>}
+                      footerIcon={<FontAwesomeIcon icon="arrow-circle-right"/>}
+                />
 
                 <Card name="権限管理" descLink="詳細を見る" number="24" classNames={
                     {
                         panel: "card bg-warning",
-                        headerIcon: "fa fa-group fa-5x",
-                        footerIcon: "fa fa-arrow-circle-right",
                     }
-                } href="/admin/auth/customgroup/"/>
+                } href="/admin/auth/customgroup/"
+                      icon={<FontAwesomeIcon icon="users" size="5x"/>}
+                      footerIcon={<FontAwesomeIcon icon="arrow-circle-right"/>}
+                />
 
                 <Card name="権限管理" descLink="詳細を見る" number="47" classNames={
                     {
                         panel: "card bg-danger",
-                        headerIcon: "fa fa-user fa-5x",
-                        footerIcon: "fa fa-arrow-circle-right"
                     }
-                } href="/admin/auth/member/"/>
+                } href="/admin/auth/member/"
+                      icon={<FontAwesomeIcon icon="user" size="5x"/>}
+                      footerIcon={<FontAwesomeIcon icon="arrow-circle-right"/>}
+                />
             </div>
         </>
     )

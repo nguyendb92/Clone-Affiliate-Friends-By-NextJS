@@ -1,11 +1,10 @@
 import React from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChevronLeft} from "@fortawesome/free-solid-svg-icons";
 import Link from 'next/link'
 
 const element = (
     <span className="arrow">
-        <FontAwesomeIcon icon={faChevronLeft} size="sm"
+        <FontAwesomeIcon icon="chevron-left" size="sm"
                          style={{width: "6px", heght: "14px"}}/>
     </span>
 )

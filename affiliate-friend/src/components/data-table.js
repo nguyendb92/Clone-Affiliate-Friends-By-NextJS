@@ -1,7 +1,8 @@
+import React from "react";
 import {Table} from "antd";
 import 'antd/dist/antd.css';
 import {useEffect} from 'react';
-import '../../styles/data-table.module.scss'
+import '../../styles/data-table.module.css'
 
 
 function DataTable(props) {

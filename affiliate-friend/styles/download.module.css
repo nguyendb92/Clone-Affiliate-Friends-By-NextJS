@@ -1,0 +1,14 @@
+.csv_download {
+  display: flex;
+  flex-direction: column;
+  float: right; }
+
+#export-current-CSV {
+  background-color: #666666;
+  color: white; }
+  #export-current-CSV:hover {
+    color: #333;
+    background-color: #a5a1a1;
+    border-color: #adadad; }
+
+/*# sourceMappingURL=download.module.css.map */

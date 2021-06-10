@@ -1,6 +1,9 @@
-import '../styles/globals.scss';
+import React from "react";
+import '../styles/globals.css';
 // add bootstrap css
-import 'bootstrap/dist/css/bootstrap.css'
+import '../styles/Custom.css'
+import "../src/components/fontawesome"
+
 
 function MyApp({Component, pageProps}) {
     return <Component {...pageProps} />

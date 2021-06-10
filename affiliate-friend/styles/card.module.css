@@ -1,0 +1,41 @@
+.bg-primary a {
+  color: #0d6efd; }
+
+.cardHeader {
+  color: #fff; }
+
+.cardFooter {
+  background-color: #f5f5f5; }
+
+.huge {
+  font-size: 40px; }
+
+.bg-primary .card-header {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7; }
+.bg-primary a {
+  color: #0d6efd; }
+
+.bg-warning .card-header {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7; }
+.bg-warning a {
+  color: #ffc107; }
+
+.bg-success .card-header {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7; }
+.bg-success a {
+  color: #198754; }
+
+.bg-danger .card-header {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7; }
+.bg-danger a {
+  color: #dc3545; }
+
+/*# sourceMappingURL=card.module.css.map */
