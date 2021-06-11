@@ -1,5 +1,7 @@
-.navbarInverse {
-  background-color: #222;
-  border-color: #080808; }
+.navbar-top-links {
+  margin: 0; }
+
+.navbar-right {
+  text-align: right; }
 
 /*# sourceMappingURL=admin-layout.module.css.map */

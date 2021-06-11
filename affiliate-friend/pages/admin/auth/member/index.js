@@ -1,11 +1,11 @@
-import Panel from "../../../../src/components/panel";
+import SideBar from "../../../../src/components/left-menu";
 import React from "react";
 
 function TestPanel(){
 
     return (
         <>
-            <Panel></Panel>
+            <SideBar></SideBar>
         </>
     )
 }

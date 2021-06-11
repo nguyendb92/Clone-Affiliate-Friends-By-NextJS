@@ -1,4 +1,5 @@
 import React from 'react';
+import {Nav} from "react-bootstrap";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Link from 'next/link'
 
@@ -11,20 +12,19 @@ const element = (
 const renderMenu = items => {
     return (
         <>
-            <ul>{items.map(item => {
-                return <li className={item.classes && typeof item.classes === "string" ? item.classes : ''}>
+            {items.map(item => {
+                return <Nav.Item className={item.classes && typeof item.classes === "string" ? item.classes : ''}>
                     <Link href={item.link}>
-                        <a>
+                        <Nav.Link>
                             {item.text}
                             {item.classes && item.classes.includes("module") ? element : ''}
-                        < /a>
+                        </Nav.Link>
                     </Link>
-                    <ul className="nav nav-second-level collapse" aria-expanded="false">
+                    <Nav className="nav nav-second-level collapse" aria-expanded="false">
                         {item.children && renderMenu(item.children)}
-                    </ul>
-                </li>
+                    </Nav>
+                </Nav.Item>
             })}
-            </ul>
         </>
     )
 }

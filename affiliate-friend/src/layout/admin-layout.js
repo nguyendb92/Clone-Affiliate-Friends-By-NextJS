@@ -11,7 +11,7 @@ function AdminLayout(props) {
     return (
         <>
             <div id="wrapper" style={{minHeight: "930px"}}>
-                <Container className={classes.navbarInverse} style={{height: "50px"}} fluid>
+                <Container  style={{height: "50px"}} fluid>
                     <Header>
                         <NavHeader/>
                     </Header>
