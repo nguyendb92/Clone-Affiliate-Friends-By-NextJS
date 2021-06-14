@@ -3,7 +3,7 @@ import Panel from "./panel";
 import DataTable from "./data-table";
 
 
-function Content(props) {
+function TableContent(props) {
     return (
         <>
             <Panel/>
@@ -14,4 +14,4 @@ function Content(props) {
 }
 
 
-export default Content;
+export default TableContent;

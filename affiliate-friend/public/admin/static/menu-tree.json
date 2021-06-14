@@ -2,42 +2,45 @@
   "menu": [
     {
       "classes": "active",
-      "text": "TOP",
+      "text": "Menu 1",
+      "title": "Title Menu 1",
       "link": "/admin",
       "children": null
     },
     {
       "classes": "app-auth module",
-      "text": "会員一覧 1",
-      "link": "#",
+      "text": "Menu 2",
+      "title": "Title Menu 2",
+      "link": "",
       "children": [
         {
           "classes": "model-m",
-          "text": "会員管理 2",
+          "text": "Menu 2.1",
           "link": "/admin/auth/member/",
           "children": null
         },
         {
-          "text": "フレンズ経由登録 2",
+          "text": "Menu 2.2",
           "link": "/admin/auth/member/",
           "children": null
         },
         {
-          "text": "会員一覧 2",
+          "text": "Menu 2.3",
+          "title": "Title Menu 2.3",
           "link": "#",
           "children": [
             {
-              "text": "会員管理 3",
+              "text": "Menu 2.3.1",
               "link": "/admin/auth/member/",
               "children": null
             },
             {
-              "text": "フレンズ経由登録 3",
+              "text": "Menu 2.3.2",
               "link": "/admin/auth/member/",
               "children": null
             },
             {
-              "text": "フレンズ経由登録 削除 3",
+              "text": "Menu 2.3.3",
               "link": "/admin/auth/member/",
               "children": null
             }
@@ -46,21 +49,22 @@
       ]
     },
     { "classes": "app-django module",
-      "text": "会員一覧 11",
+      "text": "Menu 3",
+      "title": "Title Menu 3",
       "link": "#",
       "children": [
         {
-          "text": "会員管理 2",
+          "text": "Menu 3.1",
           "link": "/admin/auth/member/",
           "children": null
         },
         {
-          "text": "フレンズ経由登録 2",
+          "text": "Menu 3.2",
           "link": "/admin/auth/member/",
           "children": null
         },
         {
-          "text": "フレンズ経由登録 削除 2",
+          "text": "Menu 3.3",
           "link": "/admin/auth/member/",
           "children": null
         }

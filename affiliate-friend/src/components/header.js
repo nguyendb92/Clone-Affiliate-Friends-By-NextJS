@@ -2,7 +2,7 @@ import React from 'react';
 import {Navbar, Nav, NavDropdown, NavLink} from "react-bootstrap";
 
 
-function Header(props) {
+function AdminHeader(props) {
     return (
         <>
             {props.children}
@@ -10,4 +10,4 @@ function Header(props) {
     )
 }
 
-export default Header;
+export default AdminHeader;

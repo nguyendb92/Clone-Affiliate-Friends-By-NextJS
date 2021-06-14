@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Content from "../../src/components/content";
+import TableContent from "../../src/components/content";
 import AdminLayout from "../../src/layout/admin-layout";
 
 
@@ -50,7 +50,7 @@ function Admin({datatable}) {
                 <title> TOP | ASP統合システム 運営者向け機能</title>
             </Head>
             <AdminLayout>
-                <Content dataTable={datatable} columns={columns}/>
+                <TableContent dataTable={datatable} columns={columns}/>
             </AdminLayout>
         </>
 
