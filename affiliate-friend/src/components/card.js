@@ -20,7 +20,7 @@ function Card(props) {
                     </div>
                     <Link  href={props.href}>
                         <a>
-                            <div className={`card-footer card_cardFooter__m89g2`}>
+                            <div className={`card-footer ${style.cardFooter}`}>
                                 <span className="float-start">{props.descLink}</span>
                                 <span className="float-end">{props.footerIcon}</span>
 

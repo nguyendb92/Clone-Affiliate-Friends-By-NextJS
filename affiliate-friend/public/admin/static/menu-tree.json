@@ -2,7 +2,7 @@
   "menu": [
     {
       "classes": "active",
-      "text": "Menu 1",
+      "text": "TOP",
       "title": "Title Menu 1",
       "link": "/admin",
       "children": null
@@ -10,13 +10,13 @@
     {
       "classes": "app-auth module",
       "text": "Menu 2",
-      "title": "Title Menu 2",
+      "title": "Summary report list",
       "link": "",
       "children": [
         {
           "classes": "model-m",
-          "text": "Menu 2.1",
-          "link": "/admin/auth/member/",
+          "text": "Item Reward",
+          "link": "/admin/report_analysis/item-reward/",
           "children": null
         },
         {

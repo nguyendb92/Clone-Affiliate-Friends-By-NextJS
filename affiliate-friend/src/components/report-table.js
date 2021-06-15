@@ -12,6 +12,7 @@ import "../../styles/report-layout.module.css";
 import '../../styles/search.module.css'
 import "react-datepicker/dist/react-datepicker.css";
 import 'antd/dist/antd.css';
+import {NextWebVitalsMetric} from "next/dist/pages/_app";
 
 
 function ReportTable(props) {
@@ -180,9 +181,30 @@ function ReportTable(props) {
         },
 
     ];
+    const CSVHeader = [
+        {
+            label: 'NO',
+            key: 'index',
+        },
+
+        {
+            label: 'ASP名',
+            key: 'asp_name',
+        },
+        {
+            label: '案件ID',
+            key: 'asp_item_id',
+        },
+        {
+            label: '案件名',
+            key: 'asp_item_name',
+        },
+    ]
+
 
     const createColumnMonths = (datatable) => {
         let col = Array.from(columns)
+        let header = Array.from(CSVHeader)
         let months = datatable[0]["months"]
         Object.keys(months).forEach((key) => {
             col.push(
@@ -204,9 +226,20 @@ function ReportTable(props) {
                     ],
 
                 })
+            header.push({label: "成果件数", key: `count_${key}`})
+            header.push({label: "成果報酬", key: `price_${key}`})
         })
 
         return col
+    }
+    const createCSVHeader = (datatable) => {
+        let header = Array.from(CSVHeader)
+        let months = datatable[0]["months"]
+        Object.keys(months).forEach((key) => {
+            header.push({label: "成果件数", key: `count_${key}`})
+            header.push({label: "成果報酬", key: `price_${key}`})
+        })
+        return header
     }
     const reformatJsonToTable = (datatable) => {
         let clone_table = Array.from(datatable)
@@ -224,6 +257,29 @@ function ReportTable(props) {
         return result
     }
 
+    const customeCSVDataItemReward = (datatable) => {
+        let cloneTable = Array.from(datatable)
+        let initialHeader1 = ['', '', '', '']
+        let initialHeader2 = ["NO", 'ASP名', '案件ID', '案件名']
+
+        let months = Object.keys(datatable[0].months).map((month)=> {
+            initialHeader1.push(month)
+            initialHeader1.push("")
+            initialHeader2.push("成果件数")
+            initialHeader2.push("成果報酬")
+        })
+        let newArray = cloneTable.map((item) => {
+                let newItem = {...item}
+                delete newItem.months
+                return Object.values(newItem)
+
+            }
+        )
+        newArray.unshift(initialHeader2)
+        newArray.unshift(initialHeader1)
+    return newArray
+    }
+    // let columnOfTable = createColumnMonths(dataTable)
     return (
         <>
             <div>
@@ -248,7 +304,11 @@ function ReportTable(props) {
                     <DownloadForm/>
                 </div>
                 <div>{dataTable.length > 0 &&
-                <DataTable data={reformatJsonToTable(dataTable)} columns={createColumnMonths(dataTable)}/>
+                <DataTable data={reformatJsonToTable(dataTable)}
+                           columns={createColumnMonths(dataTable)}
+                           // CSVHeaders={createCSVHeader(dataTable)}
+                           CustomCSVData={customeCSVDataItemReward}
+                />
                 }
                 </div>
             </div>

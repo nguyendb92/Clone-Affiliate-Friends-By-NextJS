@@ -3,7 +3,7 @@ import AdminHeader from "../components/header";
 import NavHeader from "../components/nav-header";
 import SideBar from "../components/left-menu";
 import React from "react";
-import {Layout} from 'antd';
+import {Layout, Breadcrumb, Space} from 'antd';
 import 'antd/dist/antd.css';
 
 
@@ -19,13 +19,25 @@ function AdminLayout(props) {
                         <NavHeader/>
                     </AdminHeader>
                 </Header>
-                <Layout>
-                    <Sider style={{height: "250px"}}>
+                <Layout style={{height:"100vh"}}>
+                    <Sider theme="light" style={{height: "100vh", width:"250px"}}>
                         <SideBar/>
                     </Sider>
-                    <Content style={{minHeight: "595px"}}>
-                        {props.children}
-                    </Content>
+                    <Layout style={{marginLeft: "15px"}}>
+                        <Breadcrumb style={{margin: "15px "}}>
+                            <Breadcrumb.Item>Home</Breadcrumb.Item>
+                            <Breadcrumb.Item>
+                                <a href="">Application Center</a>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Item>
+                                <a href="">Application List</a>
+                            </Breadcrumb.Item>
+                            <Breadcrumb.Item>An Application</Breadcrumb.Item>
+                        </Breadcrumb>
+                        <Content style={{minWidth: "595px", margin: "15px"}}>
+                            {props.children}
+                        </Content>
+                    </Layout>
                 </Layout>
             </Layout>
 

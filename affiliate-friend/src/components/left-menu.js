@@ -59,7 +59,7 @@ function SideBar(props) {
             <Menu
                 theme={theme}
                 onClick={handleClick}
-                style={{width: 256}}
+                // style={{width: 256}}
                 // defaultOpenKeys={['sub1']}
                 selectedKeys={[current]}
                 mode="inline"

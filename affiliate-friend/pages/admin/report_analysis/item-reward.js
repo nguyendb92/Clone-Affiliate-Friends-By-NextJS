@@ -1,8 +1,9 @@
 import Head from "next/head";
 import "../../../src/components/fontawesome";
 import "../../../styles/dashboard.module.css"
-import ReportLayout from "../../../src/layout/layout";
+// import ReportLayout from "../../../src/layout/layout";
 import ReportTable from "../../../src/components/report-table";
+import AdminLayout from "../../../src/layout/admin-layout";
 
 
 function ItemReward() {
@@ -12,9 +13,9 @@ function ItemReward() {
             <Head>
                 <title> TOP | ASP統合システム 運営者向け機能 </title>
             </Head>
-            <ReportLayout>
+            <AdminLayout>
                 <ReportTable/>
-            </ReportLayout>
+            </AdminLayout>
         </>
 
     )

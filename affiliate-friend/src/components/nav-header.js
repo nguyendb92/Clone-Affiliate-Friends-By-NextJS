@@ -5,7 +5,7 @@ import style from "../../styles/nav-header.module.css"
 function NavHeader(props) {
     return (
         <>
-            <Navbar className={`${style.navbarInverse}`} fixed="top" role="navigation">
+            <Navbar fixed="top" role="navigation">
                 <Navbar.Brand className={style.navbarBrand} href="/admin/">
                     ASP統合システム<br/>運営者向け機能
                 </Navbar.Brand>

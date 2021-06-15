@@ -1,9 +1,0 @@
-.app-django_celery_results,
-.app-instant_report,
-.app-django_celery_beat,
-.app-realtime_report,
-.app-web_listings,
-.app-sites,
-.model-accountasp, .model-lambdafunctionsasp {
-    display: none;
-}
