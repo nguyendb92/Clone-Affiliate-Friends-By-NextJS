@@ -300,9 +300,9 @@ function ReportTable(props) {
                     />
                 </div>
 
-                <div>
-                    <DownloadForm/>
-                </div>
+                {/*<div>*/}
+                {/*    <DownloadForm/>*/}
+                {/*</div>*/}
                 <div>{dataTable.length > 0 &&
                 <DataTable data={reformatJsonToTable(dataTable)}
                            columns={createColumnMonths(dataTable)}

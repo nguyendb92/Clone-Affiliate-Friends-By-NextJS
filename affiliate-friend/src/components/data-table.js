@@ -8,11 +8,9 @@ import {CSVLink, CSVDownload} from "react-csv";
 
 function DataTable(props) {
     const dataSource = props.data
-    const CSVData = props.CustomCSVData(dataSource)
+    const CSVData = (props.CustomCSVData !== undefined) ? props.CustomCSVData(dataSource): dataSource
     useEffect(() => {
     })
-    console.log("DATA SOURCE", dataSource)
-    console.log("Column", props.columns)
     return (
         <>
             <div>{props.CSVHeaders ?

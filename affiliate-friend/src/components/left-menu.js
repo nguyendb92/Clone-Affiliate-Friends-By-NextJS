@@ -15,12 +15,9 @@ const renderSideBar = items => {
     return (
         <>
             {items.map((item, index) => {
-                console.log("UUID", uuidv4())
-                console.log(index, item)
                 if (item.children) {
                     return (
                             <SubMenu key={uuidv4()} title={item.title}>
-                                {console.log("TiTLE.........", item.title)}
                                 {item.children && renderSideBar(item.children)}
                             </SubMenu>
                     )
